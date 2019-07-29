@@ -4,21 +4,32 @@ namespace FizzBuzz
 {
     public class FizzBuzz
     {
-        private int[] modNumbers = new int[] { 15, 3, 5 };
-        private Dictionary<int, string> modNumberTable = new Dictionary<int, string>() {
-            {15, "FizzBuzz"},
-            {3, "Fizz"},
-            {5, "Buzz"},
-        };
+        private int[] modNumbers;
+        private Dictionary<int, string> modNumberTable;
 
-        public string Say(int number)
+        public FizzBuzz()
         {
-            foreach (int modNumber in modNumbers)
+            modNumbers = new int[] { 15, 3, 5 };
+            modNumberTable = new Dictionary<int, string>() {
+                {15, "FizzBuzz"},
+                {3, "Fizz"},
+                {5, "Buzz"},
+            };
+        }
+
+        public FizzBuzz(int[] modNumbers, Dictionary<int, string> modNumberTable)
+        {
+            this.modNumbers = modNumbers;
+            this.modNumberTable = modNumberTable;
+        }
+        public string Say(int sayNumber)
+        {
+            foreach (int number in modNumbers)
             {
-                if (number.IsDivisibleBy(modNumber))
-                    return modNumberTable[modNumber];
+                if (sayNumber.IsDivisibleBy(number))
+                    return modNumberTable[number];
             }
-            return number.ToString();
+            return sayNumber.ToString();
         }
     }
 }

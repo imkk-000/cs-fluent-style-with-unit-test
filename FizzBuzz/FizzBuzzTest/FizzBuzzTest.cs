@@ -5,6 +5,31 @@ namespace FizzBuzzTest
 {
     public class Test
     {
+
+        [Test]
+        public void GivenFizzBuzzWithNewRuleSay4ShouldBeFizz()
+        {
+            Given.AFizzBuzzWithNewRule.Say(4).ShouldBe("Fizz");
+        }
+
+        [Test]
+        public void GivenFizzBuzzWithNewRuleSay3ShouldBeBuzz()
+        {
+            Given.AFizzBuzzWithNewRule.Say(3).ShouldBe("Buzz");
+        }
+
+        [Test]
+        public void GivenFizzBuzzWithNewRuleSay2ShouldBeFizz()
+        {
+            Given.AFizzBuzzWithNewRule.Say(2).ShouldBe("Fizz");
+        }
+
+        [Test]
+        public void GivenFizzBuzzWithNewRuleSay1ShouldBe1()
+        {
+            Given.AFizzBuzzWithNewRule.Say(1).ShouldBe("1");
+        }
+
         [Test]
         public void GivenFizzBuzzSay30ShouldBeFizzBuzz()
         {
