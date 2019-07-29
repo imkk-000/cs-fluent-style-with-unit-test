@@ -22,6 +22,7 @@ namespace FizzBuzz
             this.modNumbers = modNumbers;
             this.modNumberTable = modNumberTable;
         }
+
         public string Say(int sayNumber)
         {
             foreach (int number in modNumbers)
