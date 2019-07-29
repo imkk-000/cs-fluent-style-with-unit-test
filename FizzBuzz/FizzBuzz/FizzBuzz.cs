@@ -1,30 +1,21 @@
-﻿using System;
-
-namespace FizzBuzz
+﻿namespace FizzBuzz
 {
     public class FizzBuzz
     {
         public string Say(int number)
         {
-            if (isFizzBuzz(number)) return "FizzBuzz";
-            if (isFizz(number)) return "Fizz";
-            if (isBuzz(number)) return "Buzz";
+            int[] modNumbers = new int[] { 15, 3, 5 };
+            var fizzBuzzTable = new System.Collections.Generic.Dictionary<int, string>{
+                {15, "FizzBuzz"},
+                {3, "Fizz"},
+                {5, "Buzz"},
+            };
+            foreach (int modNumber in modNumbers)
+            {
+                if (number % modNumber == 0)
+                    return fizzBuzzTable[modNumber];
+            }
             return number.ToString();
-        }
-
-        private bool isFizzBuzz(int number)
-        {
-            return number % 15 == 0;
-        }
-
-        private bool isFizz(int number)
-        {
-            return number % 3 == 0;
-        }
-
-        private bool isBuzz(int number)
-        {
-            return number % 5 == 0;
         }
     }
 }
